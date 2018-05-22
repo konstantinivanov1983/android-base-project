@@ -1,0 +1,115 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //Android
+    androidBuildToolsVersion = "23.0.1"
+    androidMinSdkVersion = 23
+    androidTargetSdkVersion = 26
+    androidCompileSdkVersion = 26
+    androidSupportVersion = '27.1.1'
+    androidConstraintVersion = '1.1.0'
+    androidDesignVersion = '27.1.1'
+
+    //Libraries
+    roomVersion = '1.1.0'
+    ciceroneVersion = '3.0.0'
+    retrofitVersion = '2.4.0'
+    daggerVersion = '2.16'
+    butterKnifeVersion = '8.8.1'
+    recyclerViewVersion = '27.1.1'
+    rxJavaVersion = '2.1.13'
+    rxAndroidVersion = '2.0.2'
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    gsonVersion = '2.8.4'
+    okHttpVersion = '3.10.0'
+    androidAnnotationsVersion = '21.0.3'
+    moxyVersion = '1.5.3'
+
+    //Testing
+    robolectricVersion = '3.8'
+    jUnitVersion = '4.12'
+    assertJVersion = '1.7.1'
+    mockitoVersion = '1.9.5'
+    dexmakerVersion = '1.0'
+    espressoVersion = '2.0'
+    testingSupportLibVersion = '0.1'
+    testRunnerVersion = '1.0.2'
+
+    //Development
+    leakCanaryVersion = '1.5.4'
+
+    presentationDependencies = [
+            design           : "com.android.support:design:${androidDesignVersion}",
+            constraint       : "com.android.support.constraint:constraint-layout:${androidConstraintVersion}",
+            kotlin           : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlin_version}",
+            supportAndroid   : "com.android.support:appcompat-v7:${androidSupportVersion}",
+            cicerone         : "ru.terrakok.cicerone:cicerone:${ciceroneVersion}",
+            daggerCompiler   : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger           : "com.google.dagger:dagger:${daggerVersion}",
+            daggerAndroid    : "com.google.dagger:dagger-android:${daggerVersion}",
+            daggerAndroidSupp: "com.google.dagger:dagger-android-support:${daggerVersion}",
+            daggerAndroidProc: "com.google.dagger:dagger-android-processor:${daggerVersion}",
+            butterKnife      : "com.jakewharton:butterknife:${butterKnifeVersion}",
+            recyclerView     : "com.android.support:recyclerview-v7:${recyclerViewVersion}",
+            rxJava           : "io.reactivex:rxjava:${rxJavaVersion}",
+            rxAndroid        : "io.reactivex:rxandroid:${rxAndroidVersion}",
+            javaxAnnotation  : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            moxy             : "com.arello-mobile:moxy:${moxyVersion}",
+            moxyCompiler     : "com.arello-mobile:moxy-compiler:${moxyVersion}",
+            moxyAppCompat    : "com.arello-mobile:moxy-app-compat:${moxyVersion}"
+    ]
+
+    presentationTestDependencies = [
+            testRunner       : "com.android.support.test:runner:${testRunnerVersion}",
+            mockito          : "org.mockito:mockito-core:${mockitoVersion}",
+            dexmaker         : "com.google.dexmaker:dexmaker:${dexmakerVersion}",
+            dexmakerMockito  : "com.google.dexmaker:dexmaker-mockito:${dexmakerVersion}",
+            espresso         : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+            testingSupportLib: "com.android.support.test:testing-support-lib:${testingSupportLibVersion}",
+    ]
+
+    domainDependencies = [
+            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
+            rxJava         : "io.reactivex:rxjava:${rxJavaVersion}",
+    ]
+
+    domainTestDependencies = [
+            junit  : "junit:junit:${jUnitVersion}",
+            mockito: "org.mockito:mockito-core:${mockitoVersion}",
+    ]
+
+    dataDependencies = [
+            room                 : "android.arch.persistence.room:runtime:${roomVersion}",
+            roomCompiler         : "android.arch.persistence.room:compiler:${roomVersion}",
+            roomRxjava           : "android.arch.persistence.room:rxjava2:${roomVersion}",
+            retrofit             : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            daggerCompiler       : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger               : "com.google.dagger:dagger:${daggerVersion}",
+            okHttp               : "com.squareup.okhttp:okhttp:${okHttpVersion}",
+            gson                 : "com.google.code.gson:gson:${gsonVersion}",
+            rxJava               : "io.reactivex:rxjava:${rxJavaVersion}",
+            rxAndroid            : "io.reactivex:rxandroid:${rxAndroidVersion}",
+            javaxAnnotation      : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject          : "javax.inject:javax.inject:${javaxInjectVersion}",
+            androidAnnotations   : "com.android.support:support-annotations:${androidAnnotationsVersion}"
+    ]
+
+    dataTestDependencies = [
+            junit      : "junit:junit:${jUnitVersion}",
+            assertj    : "org.assertj:assertj-core:${assertJVersion}",
+            mockito    : "org.mockito:mockito-core:${mockitoVersion}",
+            robolectric: "org.robolectric:robolectric:${robolectricVersion}",
+            room       : "android.arch.persistence.room:testing:${roomVersion}"
+    ]
+
+    developmentDependencies = [
+            leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+    ]
+}
