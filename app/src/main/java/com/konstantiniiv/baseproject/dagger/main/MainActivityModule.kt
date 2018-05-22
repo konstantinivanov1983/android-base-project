@@ -15,8 +15,5 @@ import dagger.Provides
 @Module
 class MainActivityModule {
 
-    @ActivityScope
-    @Provides
-    fun provideUserRepository() : UserRepository = UserRepositoryImpl()
 
 }
