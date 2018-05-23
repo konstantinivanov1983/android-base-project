@@ -61,7 +61,9 @@ ext {
             javaxAnnotation  : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
             moxy             : "com.arello-mobile:moxy:${moxyVersion}",
             moxyCompiler     : "com.arello-mobile:moxy-compiler:${moxyVersion}",
-            moxyAppCompat    : "com.arello-mobile:moxy-app-compat:${moxyVersion}"
+            moxyAppCompat    : "com.arello-mobile:moxy-app-compat:${moxyVersion}",
+            room             : "android.arch.persistence.room:runtime:${roomVersion}",
+            roomCompiler     : "android.arch.persistence.room:compiler:${roomVersion}"
     ]
 
     presentationTestDependencies = [

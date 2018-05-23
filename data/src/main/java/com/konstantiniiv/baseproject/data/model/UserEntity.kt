@@ -3,6 +3,7 @@ package com.konstantiniiv.baseproject.data.model
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
+import com.google.gson.annotations.SerializedName
 
 /**
  * Created by Konstantin Ivanov

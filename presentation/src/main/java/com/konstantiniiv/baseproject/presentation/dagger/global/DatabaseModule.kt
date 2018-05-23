@@ -1,8 +1,8 @@
-package com.konstantiniiv.baseproject.data.dagger
+package com.konstantiniiv.baseproject.presentation.dagger.global
 
 import android.arch.persistence.room.Room
-import android.content.Context
 import com.konstantiniiv.baseproject.data.db.AppDatabase
+import com.konstantiniiv.baseproject.presentation.App
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -17,7 +17,7 @@ class DatabaseModule {
 
     @Singleton
     @Provides
-    fun provideDatabase(context: Context) = Room.databaseBuilder(context.applicationContext,
+    fun provideDatabase(application: App) = Room.databaseBuilder(application.applicationContext,
             AppDatabase::class.java, "app-database").build()
 
 }

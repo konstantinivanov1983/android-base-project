@@ -1,4 +1,4 @@
-package com.konstantiniiv.baseproject.data.dagger
+package com.konstantiniiv.baseproject.presentation.dagger.global
 
 import com.konstantiniiv.baseproject.data.mapper.UserMapper
 import dagger.Module

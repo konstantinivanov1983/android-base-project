@@ -1,4 +1,4 @@
-package com.konstantiniiv.baseproject
+package com.konstantiniiv.baseproject.presentation
 
 /**
  * Created by Konstantin Ivanov

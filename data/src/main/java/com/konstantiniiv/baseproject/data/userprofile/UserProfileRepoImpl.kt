@@ -22,7 +22,7 @@ class UserProfileRepoImpl @Inject constructor(val userCache : UserCache,
     }
 
     override fun getUsers(): Single<List<User>> {
-        throw UnsupportedOperationException("not implemented")
+        return Single.just(listOf(User(id = 14), User(id = 15)))
     }
 
     override fun getFollowers(): Flowable<List<Follower>> {

@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.arellomobile.mvp.MvpAppCompatFragment
 import com.konstantiniiv.baseproject.domain.model.Follower
 import com.konstantiniiv.baseproject.presentation.R
 import com.konstantiniiv.baseproject.presentation.ui.global.BaseFragment
@@ -15,7 +16,7 @@ import com.konstantiniiv.baseproject.presentation.ui.global.BaseFragment
  * email :  ki@agileburo.com
  * on 18.05.2018.
  */
-class UserFollowersFragment : BaseFragment(), UserFollowersView {
+class UserFollowersFragment : MvpAppCompatFragment(), UserFollowersView {
 
     lateinit var rvFollowers: RecyclerView
 

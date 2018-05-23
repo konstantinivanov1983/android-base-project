@@ -2,6 +2,7 @@ package com.konstantiniiv.baseproject.presentation.ui.global
 
 import android.content.Context
 import android.support.v4.app.Fragment
+import android.util.Log
 import com.arellomobile.mvp.MvpAppCompatFragment
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -14,12 +15,13 @@ import javax.inject.Inject
  * email :  ki@agileburo.com
  * on 21.05.2018.
  */
-open class BaseFragment : MvpAppCompatFragment(), HasSupportFragmentInjector {
+open class BaseFragment constructor() : MvpAppCompatFragment(), HasSupportFragmentInjector {
 
     @Inject
     lateinit var childFragmentInjector: DispatchingAndroidInjector<Fragment>
 
     override fun onAttach(context: Context?) {
+        Log.d("Test1983", " Start Inject " + this)
         AndroidSupportInjection.inject(this)
         super.onAttach(context)
     }

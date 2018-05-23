@@ -1,5 +1,8 @@
 package com.konstantiniiv.baseproject.domain.userprofile
 
+import com.konstantiniiv.baseproject.domain.model.User
+import io.reactivex.Observable
+import io.reactivex.functions.Function
 import javax.inject.Inject
 
 /**
@@ -11,6 +14,5 @@ class UserProfileInteractor @Inject constructor(val userProfileRepo: UserProfile
 
     fun getUserProfile() = userProfileRepo.getUsers()
 
-    fun getFollowers() = userProfileRepo.getFollowers()
 
 }

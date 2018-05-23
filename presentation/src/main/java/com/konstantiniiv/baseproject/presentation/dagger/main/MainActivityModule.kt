@@ -6,6 +6,7 @@ import com.konstantiniiv.baseproject.data.mapper.UserMapper
 import com.konstantiniiv.baseproject.data.userprofile.UserCache
 import com.konstantiniiv.baseproject.data.userprofile.UserCacheImpl
 import com.konstantiniiv.baseproject.data.userprofile.UserProfileRepoImpl
+import com.konstantiniiv.baseproject.domain.userprofile.TestInteractor
 import com.konstantiniiv.baseproject.domain.userprofile.UserProfileInteractor
 import com.konstantiniiv.baseproject.domain.userprofile.UserProfileRepo
 import dagger.Module
@@ -33,6 +34,10 @@ class MainActivityModule {
     @Provides
     fun provideUserCache(database: AppDatabase)
             : UserCache = UserCacheImpl(dataBase = database)
+
+    @ActivityScope
+    @Provides
+    fun provideTestInteractor() = TestInteractor()
 
 
 }

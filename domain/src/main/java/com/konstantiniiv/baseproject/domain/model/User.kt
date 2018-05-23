@@ -5,7 +5,7 @@ package com.konstantiniiv.baseproject.domain.model
  * email :  ki@agileburo.com
  * on 18.05.2018.
  */
-data class User(val id: Int = 0,
-                val firstName: String = "",
-                val lastName: String = "",
-                val age: Int = 0)
+data class User(var id: Int = 0,
+                var firstName: String = "",
+                var lastName: String = "",
+                var age: Int = 0)

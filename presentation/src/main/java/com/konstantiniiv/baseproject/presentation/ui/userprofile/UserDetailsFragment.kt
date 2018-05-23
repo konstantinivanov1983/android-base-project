@@ -1,13 +1,16 @@
 package com.konstantiniiv.baseproject.presentation.ui.userprofile
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.konstantiniiv.baseproject.domain.userprofile.UserProfileInteractor
 import com.konstantiniiv.baseproject.domain.model.User
+import com.konstantiniiv.baseproject.presentation.R
 import com.konstantiniiv.baseproject.presentation.presenter.userprofile.UserDetailsPresenter
 import com.konstantiniiv.baseproject.presentation.ui.global.BaseFragment
 import javax.inject.Inject
@@ -26,15 +29,29 @@ class UserDetailsFragment : BaseFragment(), UserDetailsView {
     lateinit var presenter: UserDetailsPresenter
 
     @ProvidePresenter
-    fun providePresenter() = UserDetailsPresenter(userProfileInteractor= userProfileInteractor)
+    fun providePresenter() = UserDetailsPresenter(userProfileInteractor = userProfileInteractor)
+
+    lateinit var btnShow : Button
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        val root = inflater.inflate(R.layout.fragment_userdetails, container, false)
+        return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        btnShow = view.findViewById(R.id.btn_show)
+        btnShow.setOnClickListener { _ -> presenter.onShowUserProfileButtonPressed() }
     }
 
     override fun showUserProfile(user: User) {
         throw UnsupportedOperationException("not implemented")
+    }
+
+    override fun onDestroyView() {
+        btnShow.setOnClickListener(null)
+        super.onDestroyView()
     }
 }

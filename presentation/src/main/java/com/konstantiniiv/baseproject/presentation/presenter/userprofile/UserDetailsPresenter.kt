@@ -1,6 +1,8 @@
 package com.konstantiniiv.baseproject.presentation.presenter.userprofile
 
+import android.util.Log
 import com.arellomobile.mvp.InjectViewState
+import com.konstantiniiv.baseproject.domain.model.User
 import com.konstantiniiv.baseproject.domain.userprofile.UserProfileInteractor
 import com.konstantiniiv.baseproject.presentation.presenter.BasePresenter
 import com.konstantiniiv.baseproject.presentation.ui.userprofile.UserDetailsView
@@ -16,13 +18,17 @@ class UserDetailsPresenter(val userProfileInteractor: UserProfileInteractor)
     : BasePresenter<UserDetailsView>() {
 
     fun onShowUserProfileButtonPressed() {
-
-        userProfileInteractor.getUserProfile()
+        getUserProfile()
     }
 
     private fun getUserProfile() {
         val userId = 77 // Only for Test
 
+        disposeOnDestroy(userProfileInteractor.getUserProfile()
+                .subscribe({ users : List<User> ->
+                    for (user in users) Log.d("Test1983", " User: " + user.id)
+                },
+                        { t -> Log.e("Test1983", " Error : " + t.localizedMessage) }))
 
 
     }
