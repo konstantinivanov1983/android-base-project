@@ -21,7 +21,6 @@ open class BaseFragment constructor() : MvpAppCompatFragment(), HasSupportFragme
     lateinit var childFragmentInjector: DispatchingAndroidInjector<Fragment>
 
     override fun onAttach(context: Context?) {
-        Log.d("Test1983", " Start Inject " + this)
         AndroidSupportInjection.inject(this)
         super.onAttach(context)
     }

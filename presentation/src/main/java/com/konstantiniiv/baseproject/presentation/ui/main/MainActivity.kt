@@ -4,9 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.util.Log
-import com.konstantiniiv.baseproject.domain.userprofile.TestInteractor
-import com.konstantiniiv.baseproject.domain.userprofile.UserProfileInteractor
 import com.konstantiniiv.baseproject.presentation.R
 import com.konstantiniiv.baseproject.presentation.Screens
 import com.konstantiniiv.baseproject.presentation.ui.userprofile.UserDetailsFragment
@@ -29,16 +26,9 @@ class MainActivity : DaggerAppCompatActivity() {
     @Inject
     lateinit var router: Router
 
-    @Inject
-    lateinit var userProfileInteractor: UserProfileInteractor
-
-    @Inject
-    lateinit var testInteractor: TestInteractor
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d("Test1983", " Interactor " + testInteractor.returnTest())
         if (savedInstanceState == null) router.navigateTo(Screens.FRAGMENT_USER_PROFILE)
 
     }

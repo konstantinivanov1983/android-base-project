@@ -2,7 +2,6 @@ package com.konstantiniiv.baseproject.presentation
 
 import android.app.Activity
 import com.konstantiniiv.baseproject.presentation.dagger.global.AppComponent
-import com.konstantiniiv.baseproject.presentation.dagger.global.AppModule
 import com.konstantiniiv.baseproject.presentation.dagger.global.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector

@@ -22,8 +22,6 @@ class UserDetailsPresenter(val userProfileInteractor: UserProfileInteractor)
     }
 
     private fun getUserProfile() {
-        val userId = 77 // Only for Test
-
         disposeOnDestroy(userProfileInteractor.getUserProfile()
                 .subscribe({ users : List<User> ->
                     for (user in users) Log.d("Test1983", " User: " + user.id)
