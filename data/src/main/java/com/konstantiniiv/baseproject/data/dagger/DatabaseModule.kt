@@ -1,4 +1,4 @@
-package com.konstantiniiv.baseproject.dagger.global
+package com.konstantiniiv.baseproject.data.dagger
 
 import android.arch.persistence.room.Room
 import android.content.Context

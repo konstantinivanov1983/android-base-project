@@ -4,8 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import com.konstantiniiv.baseproject.R
 import com.konstantiniiv.baseproject.Screens
+import com.konstantiniiv.baseproject.presentation.R
 import com.konstantiniiv.baseproject.presentation.ui.userprofile.UserDetailsFragment
 import dagger.android.support.DaggerAppCompatActivity
 import ru.terrakok.cicerone.NavigatorHolder

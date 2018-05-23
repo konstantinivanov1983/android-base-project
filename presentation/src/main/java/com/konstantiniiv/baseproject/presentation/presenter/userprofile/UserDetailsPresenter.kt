@@ -1,7 +1,7 @@
 package com.konstantiniiv.baseproject.presentation.presenter.userprofile
 
 import com.arellomobile.mvp.InjectViewState
-import com.arellomobile.mvp.MvpPresenter
+import com.konstantiniiv.baseproject.domain.userprofile.UserProfileInteractor
 import com.konstantiniiv.baseproject.presentation.presenter.BasePresenter
 import com.konstantiniiv.baseproject.presentation.ui.userprofile.UserDetailsView
 

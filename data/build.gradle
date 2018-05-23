@@ -39,6 +39,9 @@ dependencies {
     implementation dataDependencies.roomRxjava
     kapt dataDependencies.roomCompiler
 
+    implementation dataDependencies.dagger
+    kapt dataDependencies.daggerCompiler
+
     implementation project(':domain')
 
     testImplementation "android.arch.persistence.room:testing:1.1.0"

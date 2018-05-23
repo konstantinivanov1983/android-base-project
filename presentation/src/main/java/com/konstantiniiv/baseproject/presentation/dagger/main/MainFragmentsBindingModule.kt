@@ -1,7 +1,6 @@
-package com.konstantiniiv.baseproject.dagger.main
+package com.konstantiniiv.baseproject.presentation.dagger.main
 
 import com.konstantiniiv.baseproject.dagger.global.scope.FragmentScope
-import com.konstantiniiv.baseproject.dagger.userprofile.UserProfileModule
 import com.konstantiniiv.baseproject.presentation.ui.userprofile.UserDetailsFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -15,6 +14,7 @@ import dagger.android.ContributesAndroidInjector
 abstract class MainFragmentsBindingModule {
 
     @FragmentScope
-    @ContributesAndroidInjector(modules = [UserProfileModule::class])
+    @ContributesAndroidInjector(modules = [])
     abstract fun userProfileFragment(): UserDetailsFragment
+
 }

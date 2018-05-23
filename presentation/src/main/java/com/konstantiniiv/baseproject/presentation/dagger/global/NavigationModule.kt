@@ -1,4 +1,4 @@
-package com.konstantiniiv.baseproject.dagger.global
+package com.konstantiniiv.baseproject.presentation.dagger.global
 
 import dagger.Module
 import dagger.Provides

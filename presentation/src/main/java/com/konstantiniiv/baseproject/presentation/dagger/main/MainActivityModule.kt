@@ -1,6 +1,15 @@
-package com.konstantiniiv.baseproject.dagger.main
+package com.konstantiniiv.baseproject.presentation.dagger.main
 
+import com.konstantiniiv.baseproject.dagger.global.scope.ActivityScope
+import com.konstantiniiv.baseproject.data.db.AppDatabase
+import com.konstantiniiv.baseproject.data.mapper.UserMapper
+import com.konstantiniiv.baseproject.data.userprofile.UserCache
+import com.konstantiniiv.baseproject.data.userprofile.UserCacheImpl
+import com.konstantiniiv.baseproject.data.userprofile.UserProfileRepoImpl
+import com.konstantiniiv.baseproject.domain.userprofile.UserProfileInteractor
+import com.konstantiniiv.baseproject.domain.userprofile.UserProfileRepo
 import dagger.Module
+import dagger.Provides
 
 /**
  * Created by Konstantin Ivanov
@@ -9,6 +18,21 @@ import dagger.Module
  */
 @Module
 class MainActivityModule {
+
+    @ActivityScope
+    @Provides
+    fun provideUserProfileInteractor(userRepository: UserProfileRepo)
+            : UserProfileInteractor = UserProfileInteractor(userProfileRepo = userRepository)
+
+    @ActivityScope
+    @Provides
+    fun provideUserRepository(userCache: UserCache, userMapper: UserMapper)
+            : UserProfileRepo = UserProfileRepoImpl(userCache = userCache, userMapper = userMapper)
+
+    @ActivityScope
+    @Provides
+    fun provideUserCache(database: AppDatabase)
+            : UserCache = UserCacheImpl(dataBase = database)
 
 
 }

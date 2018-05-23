@@ -6,8 +6,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.konstantiniiv.baseproject.R
 import com.konstantiniiv.baseproject.domain.model.Follower
+import com.konstantiniiv.baseproject.presentation.R
 import com.konstantiniiv.baseproject.presentation.ui.global.BaseFragment
 
 /**

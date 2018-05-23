@@ -1,8 +1,8 @@
-package com.konstantiniiv.baseproject.dagger.global
+package com.konstantiniiv.baseproject.presentation.dagger.global
 
-import com.konstantiniiv.baseproject.dagger.main.MainActivityModule
-import com.konstantiniiv.baseproject.dagger.main.MainFragmentsBindingModule
 import com.konstantiniiv.baseproject.dagger.global.scope.ActivityScope
+import com.konstantiniiv.baseproject.presentation.dagger.main.MainActivityModule
+import com.konstantiniiv.baseproject.presentation.dagger.main.MainFragmentsBindingModule
 import com.konstantiniiv.baseproject.presentation.ui.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
