@@ -7,13 +7,11 @@ dependencies {
 
     implementation domainDependencies.kotlin
     implementation domainDependencies.rxJava
-    //implementation domainDependencies.javaxAnnotation
     implementation domainDependencies.javaxInject
 
     testImplementation domainTestDependencies.junit
     testImplementation domainTestDependencies.mockito
 
-    //api project(":data")
 }
 
 repositories {

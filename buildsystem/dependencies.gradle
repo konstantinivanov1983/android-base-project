@@ -15,7 +15,7 @@ ext {
     androidDesignVersion = '27.1.1'
 
     //Libraries
-    roomVersion = '1.1.0'
+    roomVersion = '1.0.0'
     ciceroneVersion = '3.0.0'
     retrofitVersion = '2.4.0'
     daggerVersion = '2.16'

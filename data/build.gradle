@@ -34,7 +34,8 @@ dependencies {
     implementation dataDependencies.kotlin
     implementation dataDependencies.retrofit
     implementation dataDependencies.retrofitGsonConverter
-    api dataDependencies.room
+
+    implementation dataDependencies.room
     implementation dataDependencies.roomRxjava
     kapt dataDependencies.roomCompiler
 
