@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        applicationId "com.konstantiniiv.presentation"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+
+    def presentationDependencies = rootProject.ext.presentationDependencies
+    def presentationTestDependencies = rootProject.ext.presentationTestDependencies
+
+    kapt presentationDependencies.daggerCompiler
+    kapt presentationDependencies.daggerAndroidProc
+    kapt presentationDependencies.moxyCompiler
+
+    //implementation presentationDependencies.design
+    implementation presentationDependencies.rxAndroid
+    implementation presentationDependencies.recyclerView
+    implementation presentationDependencies.kotlin
+    implementation presentationDependencies.supportAndroid
+    implementation presentationDependencies.constraint
+    implementation presentationDependencies.dagger
+    implementation presentationDependencies.daggerAndroid
+    implementation presentationDependencies.daggerAndroidSupp
+    implementation presentationDependencies.cicerone
+    implementation presentationDependencies.moxy
+    implementation presentationDependencies.moxyAppCompat
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    testImplementation "android.arch.persistence.room:testing:1.1.0"
+    //androidTestImplementation "android.arch.core:core-testing:1.1.1"
+
+    implementation project(':domain')
+    implementation project(':data')
+
+    //api project(":domain")
+}
