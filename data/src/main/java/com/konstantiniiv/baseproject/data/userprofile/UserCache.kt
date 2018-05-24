@@ -1,6 +1,6 @@
 package com.konstantiniiv.baseproject.data.userprofile
 
-import com.konstantiniiv.baseproject.data.model.UserEntity
+import com.konstantiniiv.baseproject.data.models.UserData
 import io.reactivex.Flowable
 
 /**
@@ -19,14 +19,14 @@ interface UserCache {
      *
      * @param userId The user id to retrieve data.
      */
-    fun get(userId : Int) : Flowable<UserEntity>
+    fun get(userId : Int) : Flowable<UserData>
 
     /**
      * Puts an element into the cache.
      *
-     * @param userEntity Element to insert in the cache.
+     * @param userData Element to insert in the cache.
      */
-    fun put(userEntity : UserEntity)
+    fun put(userData : UserData)
 
     /**
      * Checks if an element (User) exists in the cache.

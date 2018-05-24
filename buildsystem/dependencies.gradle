@@ -15,6 +15,7 @@ ext {
     androidDesignVersion = '27.1.1'
 
     //Libraries
+    loggerVersion = '2.2.0'
     roomVersion = '1.0.0'
     ciceroneVersion = '3.0.0'
     retrofitVersion = '2.4.0'
@@ -44,6 +45,9 @@ ext {
     leakCanaryVersion = '1.5.4'
 
     presentationDependencies = [
+            retrofit             : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            logger           : "com.orhanobut:logger:${loggerVersion}",
             design           : "com.android.support:design:${androidDesignVersion}",
             constraint       : "com.android.support.constraint:constraint-layout:${androidConstraintVersion}",
             kotlin           : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlin_version}",

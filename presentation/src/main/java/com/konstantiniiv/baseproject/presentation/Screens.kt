@@ -9,10 +9,10 @@ class Screens {
     companion object {
 
         val ACTIVITY_MAIN = "activity_main"
+        val ACTIVITY_LOGIN = "activity_login"
 
-        val FRAGMENT_FIRST = "fragment_first"
-        val FRAGMENT_SECOND = "fragment_second"
-
+        val FRAGMENT_TOP_MOVIES = "fragment_top_movies"
         val FRAGMENT_USER_PROFILE = "fragment_user_profile"
+
     }
 }

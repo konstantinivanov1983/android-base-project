@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import com.konstantiniiv.baseproject.presentation.R
 import com.konstantiniiv.baseproject.presentation.Screens
+import com.konstantiniiv.baseproject.presentation.ui.movies.TopRatedMoviesFragment
 import com.konstantiniiv.baseproject.presentation.ui.userprofile.UserDetailsFragment
 import dagger.android.support.DaggerAppCompatActivity
 import ru.terrakok.cicerone.NavigatorHolder
@@ -29,7 +30,7 @@ class MainActivity : DaggerAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (savedInstanceState == null) router.navigateTo(Screens.FRAGMENT_USER_PROFILE)
+        if (savedInstanceState == null) router.navigateTo(Screens.FRAGMENT_TOP_MOVIES)
 
     }
 
@@ -50,6 +51,7 @@ class MainActivity : DaggerAppCompatActivity() {
 
         override fun createFragment(screenKey: String?, data: Any?): Fragment? =
                 when (screenKey) {
+                    Screens.FRAGMENT_TOP_MOVIES -> TopRatedMoviesFragment()
                     Screens.FRAGMENT_USER_PROFILE -> UserDetailsFragment()
                     else -> null
                 }

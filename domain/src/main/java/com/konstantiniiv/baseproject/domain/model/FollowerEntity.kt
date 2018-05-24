@@ -5,6 +5,6 @@ package com.konstantiniiv.baseproject.domain.model
  * email :  ki@agileburo.com
  * on 18.05.2018.
  */
-data class Follower(val id: Int = 0,
-                    val name: String = "",
-                    val age: Int = 0)
+data class FollowerEntity(val id: Int = 0,
+                          val name: String = "",
+                          val age: Int = 0)

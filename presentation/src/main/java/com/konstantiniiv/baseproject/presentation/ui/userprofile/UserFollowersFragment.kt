@@ -7,9 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.arellomobile.mvp.MvpAppCompatFragment
-import com.konstantiniiv.baseproject.domain.model.Follower
+import com.konstantiniiv.baseproject.domain.model.FollowerEntity
 import com.konstantiniiv.baseproject.presentation.R
-import com.konstantiniiv.baseproject.presentation.ui.global.BaseFragment
 
 /**
  * Created by Konstantin Ivanov
@@ -32,7 +31,7 @@ class UserFollowersFragment : MvpAppCompatFragment(), UserFollowersView {
         rvFollowers.layoutManager = lm
     }
 
-    override fun showFollowers(followers: List<Follower>) {
+    override fun showFollowers(followers: List<FollowerEntity>) {
         throw UnsupportedOperationException("not implemented")
     }
 }

@@ -3,6 +3,8 @@ package com.konstantiniiv.baseproject.presentation
 import android.app.Activity
 import com.konstantiniiv.baseproject.presentation.dagger.global.AppComponent
 import com.konstantiniiv.baseproject.presentation.dagger.global.DaggerAppComponent
+import com.orhanobut.logger.AndroidLogAdapter
+import com.orhanobut.logger.Logger
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.DaggerApplication
@@ -27,6 +29,7 @@ class App : DaggerApplication() {
     override fun onCreate() {
         super.onCreate()
         app = this
+        Logger.addLogAdapter(AndroidLogAdapter())
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {

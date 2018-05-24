@@ -1,7 +1,7 @@
 package com.konstantiniiv.baseproject.domain.userprofile
 
-import com.konstantiniiv.baseproject.domain.model.Follower
-import com.konstantiniiv.baseproject.domain.model.User
+import com.konstantiniiv.baseproject.domain.model.FollowerEntity
+import com.konstantiniiv.baseproject.domain.model.UserEntity
 import io.reactivex.Flowable
 import io.reactivex.Single
 
@@ -12,9 +12,9 @@ import io.reactivex.Single
  */
 interface UserProfileRepo {
 
-    fun getUserById(userId : Int) : Flowable<User>
+    fun getUserById(userId : Int) : Flowable<UserEntity>
 
-    fun getUsers() : Single<List<User>>
+    fun getUsers() : Single<List<UserEntity>>
 
-    fun getFollowers() : Flowable<List<Follower>>
+    fun getFollowers() : Flowable<List<FollowerEntity>>
 }

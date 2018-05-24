@@ -1,8 +1,5 @@
 package com.konstantiniiv.baseproject.domain.userprofile
 
-import com.konstantiniiv.baseproject.domain.model.User
-import io.reactivex.Observable
-import io.reactivex.functions.Function
 import javax.inject.Inject
 
 /**

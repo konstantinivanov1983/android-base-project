@@ -19,8 +19,9 @@ import javax.inject.Singleton
     MapperModule::class,
     NavigationModule::class,
     AndroidSupportInjectionModule::class,
-    ActivityBindingModule::class
-    ])
+    ActivityBindingModule::class,
+    NetworkModule::class
+])
 interface AppComponent : AndroidInjector<App> {
 
     @Component.Builder

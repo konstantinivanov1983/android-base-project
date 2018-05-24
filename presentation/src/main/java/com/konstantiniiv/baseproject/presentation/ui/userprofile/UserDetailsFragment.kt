@@ -1,7 +1,6 @@
 package com.konstantiniiv.baseproject.presentation.ui.userprofile
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +8,11 @@ import android.widget.Button
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.konstantiniiv.baseproject.domain.userprofile.UserProfileInteractor
-import com.konstantiniiv.baseproject.domain.model.User
+import com.konstantiniiv.baseproject.domain.model.UserEntity
 import com.konstantiniiv.baseproject.presentation.R
 import com.konstantiniiv.baseproject.presentation.presenter.userprofile.UserDetailsPresenter
 import com.konstantiniiv.baseproject.presentation.ui.global.BaseFragment
+import ru.terrakok.cicerone.Router
 import javax.inject.Inject
 
 /**
@@ -25,11 +25,15 @@ class UserDetailsFragment : BaseFragment(), UserDetailsView {
     @Inject
     lateinit var userProfileInteractor: UserProfileInteractor
 
+    @Inject
+    lateinit var router: Router
+
     @InjectPresenter
     lateinit var presenter: UserDetailsPresenter
 
     @ProvidePresenter
-    fun providePresenter() = UserDetailsPresenter(userProfileInteractor = userProfileInteractor)
+    fun providePresenter() = UserDetailsPresenter(userProfileInteractor = userProfileInteractor,
+            router = router)
 
     lateinit var btnShow : Button
 
@@ -46,7 +50,7 @@ class UserDetailsFragment : BaseFragment(), UserDetailsView {
         btnShow.setOnClickListener { _ -> presenter.onShowUserProfileButtonPressed() }
     }
 
-    override fun showUserProfile(user: User) {
+    override fun showUserProfile(user: UserEntity) {
         throw UnsupportedOperationException("not implemented")
     }
 

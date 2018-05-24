@@ -5,7 +5,7 @@ import android.arch.persistence.room.Room
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
 import com.konstantiniiv.baseproject.data.db.AppDatabase
-import com.konstantiniiv.baseproject.data.model.UserEntity
+import com.konstantiniiv.baseproject.data.models.UserData
 import io.reactivex.functions.Predicate
 import org.junit.After
 import org.junit.Before
@@ -41,14 +41,14 @@ class UserDaoTest {
 
     @Test
     fun insertAndGetUserById() {
-        dB.userDao().insert(UserEntity(id = 23, firstName = "Konstantin", lastName = "Ivanov",
+        dB.userDao().insert(UserData(id = 23, firstName = "Konstantin", lastName = "Ivanov",
                 age = 35))
 
         dB.userDao()
                 .getUserById(23)
                 .test()
-                .assertValue(object : Predicate<UserEntity> {
-                    override fun test(t: UserEntity): Boolean {
+                .assertValue(object : Predicate<UserData> {
+                    override fun test(t: UserData): Boolean {
                         return t.id.equals(23) && t.firstName.equals("Konstantin")
                                 && t.lastName.equals("Ivanov")
                     }

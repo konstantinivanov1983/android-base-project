@@ -1,5 +1,6 @@
 package com.konstantiniiv.baseproject.presentation.dagger.global
 
+import com.konstantiniiv.baseproject.data.mapper.MovieMapper
 import com.konstantiniiv.baseproject.data.mapper.UserMapper
 import dagger.Module
 import dagger.Provides
@@ -15,5 +16,9 @@ class MapperModule {
 
     @Singleton
     @Provides
-    fun provideUserMapper() : UserMapper = UserMapper()
+    fun provideUserMapper(): UserMapper = UserMapper()
+
+    @Singleton
+    @Provides
+    fun provideMovieMapper(): MovieMapper = MovieMapper()
 }

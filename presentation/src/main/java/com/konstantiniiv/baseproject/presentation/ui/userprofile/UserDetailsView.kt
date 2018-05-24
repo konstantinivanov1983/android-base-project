@@ -1,7 +1,7 @@
 package com.konstantiniiv.baseproject.presentation.ui.userprofile
 
 import com.arellomobile.mvp.MvpView
-import com.konstantiniiv.baseproject.domain.model.User
+import com.konstantiniiv.baseproject.domain.model.UserEntity
 
 /**
  * Created by Konstantin Ivanov
@@ -10,6 +10,6 @@ import com.konstantiniiv.baseproject.domain.model.User
  */
 interface UserDetailsView : MvpView{
 
-    fun showUserProfile(user: User)
+    fun showUserProfile(user: UserEntity)
 
 }

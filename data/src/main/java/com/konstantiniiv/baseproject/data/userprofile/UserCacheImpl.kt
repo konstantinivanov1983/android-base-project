@@ -1,7 +1,7 @@
 package com.konstantiniiv.baseproject.data.userprofile
 
 import com.konstantiniiv.baseproject.data.db.AppDatabase
-import com.konstantiniiv.baseproject.data.model.UserEntity
+import com.konstantiniiv.baseproject.data.models.UserData
 import io.reactivex.Flowable
 import javax.inject.Inject
 
@@ -17,11 +17,11 @@ import javax.inject.Inject
 
 class UserCacheImpl @Inject constructor(val dataBase : AppDatabase) : UserCache{
 
-    override fun get(userId: Int): Flowable<UserEntity> {
+    override fun get(userId: Int): Flowable<UserData> {
         return dataBase.userDao().getUserById(userId)
     }
 
-    override fun put(userEntity: UserEntity) {
+    override fun put(userData: UserData) {
         throw UnsupportedOperationException("not implemented")
     }
 

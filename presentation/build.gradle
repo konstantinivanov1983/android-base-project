@@ -37,6 +37,7 @@ dependencies {
     kapt presentationDependencies.daggerCompiler
 
     //implementation presentationDependencies.design
+    implementation presentationDependencies.logger
     implementation presentationDependencies.rxAndroid
     implementation presentationDependencies.recyclerView
     implementation presentationDependencies.kotlin
@@ -49,6 +50,8 @@ dependencies {
     implementation presentationDependencies.moxy
     implementation presentationDependencies.moxyAppCompat
     implementation presentationDependencies.room
+    implementation presentationDependencies.retrofit
+    implementation presentationDependencies.retrofitGsonConverter
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

@@ -1,7 +1,7 @@
 package com.konstantiniiv.baseproject.presentation.ui.userprofile
 
 import com.arellomobile.mvp.MvpView
-import com.konstantiniiv.baseproject.domain.model.Follower
+import com.konstantiniiv.baseproject.domain.model.FollowerEntity
 
 /**
  * Created by Konstantin Ivanov
@@ -10,6 +10,6 @@ import com.konstantiniiv.baseproject.domain.model.Follower
  */
 interface UserFollowersView: MvpView{
 
-    fun showFollowers(followers: List<Follower>)
+    fun showFollowers(followers: List<FollowerEntity>)
 
 }
