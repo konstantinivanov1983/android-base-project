@@ -1,6 +1,7 @@
 package com.konstantiniiv.baseproject.domain.movies
 
 import com.konstantiniiv.baseproject.domain.model.MovieEntity
+import io.reactivex.Observable
 import io.reactivex.Single
 
 /**
@@ -10,6 +11,6 @@ import io.reactivex.Single
  */
 interface MoviesDataStore {
 
-    fun getTopRatedMovies() : Single<List<MovieEntity>>
+    fun getTopRatedMovies() : Observable<List<MovieEntity>>
 
 }

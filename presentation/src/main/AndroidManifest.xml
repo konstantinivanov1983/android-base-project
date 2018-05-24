@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.konstantiniiv.baseproject.presentation">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name="com.konstantiniiv.baseproject.presentation.App"
         android:allowBackup="true"

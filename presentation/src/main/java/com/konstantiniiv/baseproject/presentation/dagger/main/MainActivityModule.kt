@@ -11,12 +11,14 @@ import com.konstantiniiv.baseproject.data.movies.MoviesRepoImpl
 import com.konstantiniiv.baseproject.data.userprofile.UserCache
 import com.konstantiniiv.baseproject.data.userprofile.UserCacheImpl
 import com.konstantiniiv.baseproject.data.userprofile.UserProfileRepoImpl
-import com.konstantiniiv.baseproject.domain.movies.MoviesInteractor
+import com.konstantiniiv.baseproject.domain.movies.GetTopRatedMovies
 import com.konstantiniiv.baseproject.domain.movies.MoviesRepo
 import com.konstantiniiv.baseproject.domain.userprofile.UserProfileInteractor
 import com.konstantiniiv.baseproject.domain.userprofile.UserProfileRepo
+import com.konstantiniiv.baseproject.presentation.global.AsyncTransformer
 import dagger.Module
 import dagger.Provides
+import retrofit2.Retrofit
 
 /**
  * Created by Konstantin Ivanov
@@ -48,13 +50,13 @@ class MainActivityModule {
 
     @ActivityScope
     @Provides
-    fun provideMovieRepo(movieCache: RemoteMoviesDataStore, movieMapper: MovieMapper)
-            : MoviesRepo = MoviesRepoImpl(movieCache = movieCache, movieMapper = movieMapper)
+    fun provideMovieRepo(retrofit: Retrofit, movieMapper: MovieMapper)
+            : MoviesRepo = MoviesRepoImpl(retrofit = retrofit, movieMapper = movieMapper)
 
     @ActivityScope
     @Provides
-    fun provideMovieInteractor(moviesRepo: MoviesRepo)
-            : MoviesInteractor = MoviesInteractor(moviesRepo = moviesRepo)
+    fun providesGetTopMoviesUseCase(moviesRepo: MoviesRepo)
+            : GetTopRatedMovies = GetTopRatedMovies(AsyncTransformer(), moviesRepo)
 
 
 }

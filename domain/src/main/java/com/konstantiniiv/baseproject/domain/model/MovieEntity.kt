@@ -8,4 +8,4 @@ package com.konstantiniiv.baseproject.domain.model
 data class MovieEntity(val id : Int = 0,
                        val title: String = "",
                        val runtime: Int = 0,
-                       val averageVote : Int = 0)
+                       val averageVote : Float = 0f)

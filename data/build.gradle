@@ -31,6 +31,8 @@ dependencies {
     def dataDependencies = rootProject.ext.dataDependencies
     def dataTestDependencies = rootProject.ext.dataTestDependencies
 
+    implementation dataDependencies.logger
+
     implementation dataDependencies.kotlin
     implementation dataDependencies.retrofit
     implementation dataDependencies.retrofitGsonConverter

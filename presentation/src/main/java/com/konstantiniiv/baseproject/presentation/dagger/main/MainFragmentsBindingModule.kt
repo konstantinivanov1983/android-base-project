@@ -1,6 +1,7 @@
 package com.konstantiniiv.baseproject.presentation.dagger.main
 
 import com.konstantiniiv.baseproject.dagger.global.scope.FragmentScope
+import com.konstantiniiv.baseproject.presentation.ui.movies.TopRatedMoviesFragment
 import com.konstantiniiv.baseproject.presentation.ui.userprofile.UserDetailsFragment
 import com.konstantiniiv.baseproject.presentation.ui.userprofile.UserFollowersFragment
 import dagger.Module
@@ -16,6 +17,10 @@ abstract class MainFragmentsBindingModule {
 
     @FragmentScope
     @ContributesAndroidInjector()
-    abstract fun UserDetailsFragment(): UserDetailsFragment
+    abstract fun userDetailsFragment(): UserDetailsFragment
+
+    @FragmentScope
+    @ContributesAndroidInjector()
+    abstract fun topRatedMoviesFragment() : TopRatedMoviesFragment
 
 }

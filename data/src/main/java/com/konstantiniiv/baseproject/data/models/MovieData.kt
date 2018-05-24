@@ -31,6 +31,6 @@ data class MovieData(
 
         @ColumnInfo(name = "vote_average")
         @SerializedName("vote_average")
-        var voteAverage: Int = 0
+        var voteAverage: Float = 0f
 
 )

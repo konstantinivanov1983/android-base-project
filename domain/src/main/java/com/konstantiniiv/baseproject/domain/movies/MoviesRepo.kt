@@ -2,6 +2,7 @@ package com.konstantiniiv.baseproject.domain.movies
 
 import com.konstantiniiv.baseproject.domain.model.MovieEntity
 import io.reactivex.Flowable
+import io.reactivex.Observable
 
 /**
  * Created by Konstantin Ivanov
@@ -11,6 +12,7 @@ import io.reactivex.Flowable
 interface MoviesRepo {
 
     fun getMoviesByVotes(averageVote : Float) : Flowable<List<MovieEntity>>
+    fun getTopVotedMovies() : Observable<List<MovieEntity>>
     fun getMovie(movieId : Int) : Flowable<List<MovieEntity>>
 
 }

@@ -10,11 +10,12 @@ import android.widget.Button
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.konstantiniiv.baseproject.domain.model.MovieEntity
-import com.konstantiniiv.baseproject.domain.movies.MoviesInteractor
+import com.konstantiniiv.baseproject.domain.movies.GetTopRatedMovies
 import com.konstantiniiv.baseproject.presentation.R
 import com.konstantiniiv.baseproject.presentation.presenter.movies.TopMoviesPresenter
 import com.konstantiniiv.baseproject.presentation.ui.global.BaseFragment
 import com.orhanobut.logger.Logger
+import java.util.*
 import javax.inject.Inject
 
 /**
@@ -26,13 +27,13 @@ import javax.inject.Inject
 class TopRatedMoviesFragment : BaseFragment(), TopRatedMoviesView {
 
     @Inject
-    lateinit var moviesInteractor: MoviesInteractor
+    lateinit var getTopRatedMovies: GetTopRatedMovies
 
     @InjectPresenter
     lateinit var presenter: TopMoviesPresenter
 
     @ProvidePresenter
-    fun providePresenter() = TopMoviesPresenter(interactor = moviesInteractor)
+    fun providePresenter() = TopMoviesPresenter(getTopRatedMovies)
 
     lateinit var rvMovies: RecyclerView
     lateinit var btnShowMovies: Button
@@ -54,6 +55,12 @@ class TopRatedMoviesFragment : BaseFragment(), TopRatedMoviesView {
 
     override fun showMovies(movies: List<MovieEntity>) {
         Logger.d("Get Top Movies " + movies.size)
+        if (movies.isNotEmpty()) {
+            for(movie in movies) {
+                Logger.d(String.format(Locale.ENGLISH, "title:%s, votes:%f",
+                        movie.title, movie.averageVote))
+            }
+        }
     }
 
     override fun onDestroyView() {

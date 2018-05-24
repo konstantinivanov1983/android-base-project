@@ -2,11 +2,10 @@ package com.konstantiniiv.baseproject.presentation.presenter.movies
 
 import com.arellomobile.mvp.InjectViewState
 import com.konstantiniiv.baseproject.domain.model.MovieEntity
-import com.konstantiniiv.baseproject.domain.movies.MoviesInteractor
+import com.konstantiniiv.baseproject.domain.movies.GetTopRatedMovies
 import com.konstantiniiv.baseproject.presentation.presenter.BasePresenter
 import com.konstantiniiv.baseproject.presentation.ui.movies.TopRatedMoviesView
 import com.orhanobut.logger.Logger
-import io.reactivex.android.schedulers.AndroidSchedulers
 
 /**
  * Created by Konstantin Ivanov
@@ -14,17 +13,17 @@ import io.reactivex.android.schedulers.AndroidSchedulers
  * on 23.05.2018.
  */
 @InjectViewState
-class TopMoviesPresenter(val interactor: MoviesInteractor) : BasePresenter<TopRatedMoviesView>() {
+class TopMoviesPresenter(val getTopRatedMovies: GetTopRatedMovies) : BasePresenter<TopRatedMoviesView>() {
 
     fun getTopMovies() {
-        disposeOnDestroy(interactor.getTopRatedMovies()
-                .observeOn(AndroidSchedulers.mainThread())
+        Logger.d("Start get Movies")
+        disposeOnDestroy(getTopRatedMovies.createObservable()
                 .subscribe({ t: List<MovieEntity>? ->
                     if (t != null) viewState.showMovies(t)
                     else Logger.d("List Movies is Null")
                 },
                         { t: Throwable? ->
-
+                            Logger.d("Error : " + t?.message)
                         }))
 
     }
