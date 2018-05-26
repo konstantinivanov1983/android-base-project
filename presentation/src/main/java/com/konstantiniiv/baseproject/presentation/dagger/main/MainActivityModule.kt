@@ -8,6 +8,7 @@ import com.konstantiniiv.baseproject.data.movies.RemoteMoviesDataStore
 import com.konstantiniiv.baseproject.data.movies.MovieCache
 import com.konstantiniiv.baseproject.data.movies.CachedMoviesDataStore
 import com.konstantiniiv.baseproject.data.movies.MoviesRepoImpl
+import com.konstantiniiv.baseproject.data.network.Api
 import com.konstantiniiv.baseproject.data.userprofile.UserCache
 import com.konstantiniiv.baseproject.data.userprofile.UserCacheImpl
 import com.konstantiniiv.baseproject.data.userprofile.UserProfileRepoImpl
@@ -50,8 +51,8 @@ class MainActivityModule {
 
     @ActivityScope
     @Provides
-    fun provideMovieRepo(retrofit: Retrofit, movieMapper: MovieMapper)
-            : MoviesRepo = MoviesRepoImpl(retrofit = retrofit, movieMapper = movieMapper)
+    fun provideMovieRepo(api: Api, movieMapper: MovieMapper)
+            : MoviesRepo = MoviesRepoImpl(api = api, movieMapper = movieMapper)
 
     @ActivityScope
     @Provides

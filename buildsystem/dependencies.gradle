@@ -47,6 +47,7 @@ ext {
     presentationDependencies = [
             retrofit             : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
             retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            retrofitRxJava2      : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
             logger           : "com.orhanobut:logger:${loggerVersion}",
             design           : "com.android.support:design:${androidDesignVersion}",
             constraint       : "com.android.support.constraint:constraint-layout:${androidConstraintVersion}",
@@ -98,6 +99,7 @@ ext {
             roomCompiler         : "android.arch.persistence.room:compiler:${roomVersion}",
             roomRxjava           : "android.arch.persistence.room:rxjava2:${roomVersion}",
             retrofit             : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitRxJava2      : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
             retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
             daggerCompiler       : "com.google.dagger:dagger-compiler:${daggerVersion}",
             dagger               : "com.google.dagger:dagger:${daggerVersion}",

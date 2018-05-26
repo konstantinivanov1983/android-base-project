@@ -1,5 +1,6 @@
 package com.konstantiniiv.baseproject.data;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

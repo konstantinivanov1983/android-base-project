@@ -1,6 +1,7 @@
 package com.konstantiniiv.baseproject.data.movies
 
 import com.konstantiniiv.baseproject.data.mapper.MovieMapper
+import com.konstantiniiv.baseproject.data.network.Api
 import com.konstantiniiv.baseproject.domain.model.MovieEntity
 import com.konstantiniiv.baseproject.domain.movies.MoviesCache
 import com.konstantiniiv.baseproject.domain.movies.MoviesRepo
@@ -15,14 +16,14 @@ import javax.inject.Inject
  * email :  ki@agileburo.com
  * on 23.05.2018.
  */
-class MoviesRepoImpl constructor(retrofit: Retrofit,
+class MoviesRepoImpl constructor(api: Api,
         //private val moviesCache: MoviesCache,
                                  val movieMapper: MovieMapper) : MoviesRepo {
 
     private val remoteDataStore: RemoteMoviesDataStore
 
     init {
-        remoteDataStore = RemoteMoviesDataStore(retrofit = retrofit, movieMapper = movieMapper)
+        remoteDataStore = RemoteMoviesDataStore(api = api, movieMapper = movieMapper)
     }
 
     /*override fun getTopRatedMovies(): Flowable<List<Movie>> {

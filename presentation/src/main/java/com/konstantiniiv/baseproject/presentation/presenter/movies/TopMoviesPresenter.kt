@@ -17,7 +17,7 @@ class TopMoviesPresenter(val getTopRatedMovies: GetTopRatedMovies) : BasePresent
 
     fun getTopMovies() {
         Logger.d("Start get Movies")
-        disposeOnDestroy(getTopRatedMovies.createObservable()
+        disposeOnDestroy(getTopRatedMovies.observable()
                 .subscribe({ t: List<MovieEntity>? ->
                     if (t != null) viewState.showMovies(t)
                     else Logger.d("List Movies is Null")
