@@ -48,5 +48,8 @@ dependencies {
 
     testImplementation "android.arch.persistence.room:testing:1.1.0"
     testImplementation dataTestDependencies.mockito
+    testImplementation dataTestDependencies.room
+
+    androidTestImplementation "com.android.support.test:runner:1.0.1"
 
 }

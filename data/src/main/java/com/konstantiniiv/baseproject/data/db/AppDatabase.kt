@@ -14,4 +14,5 @@ import com.konstantiniiv.baseproject.data.models.UserData
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
+    abstract fun movieDao(): MovieDao
 }

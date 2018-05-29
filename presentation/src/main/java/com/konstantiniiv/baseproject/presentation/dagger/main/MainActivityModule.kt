@@ -4,9 +4,6 @@ import com.konstantiniiv.baseproject.dagger.global.scope.ActivityScope
 import com.konstantiniiv.baseproject.data.db.AppDatabase
 import com.konstantiniiv.baseproject.data.mapper.MovieMapper
 import com.konstantiniiv.baseproject.data.mapper.UserMapper
-import com.konstantiniiv.baseproject.data.movies.RemoteMoviesDataStore
-import com.konstantiniiv.baseproject.data.movies.MovieCache
-import com.konstantiniiv.baseproject.data.movies.CachedMoviesDataStore
 import com.konstantiniiv.baseproject.data.movies.MoviesRepoImpl
 import com.konstantiniiv.baseproject.data.network.Api
 import com.konstantiniiv.baseproject.data.userprofile.UserCache
@@ -43,11 +40,6 @@ class MainActivityModule {
     @Provides
     fun provideUserCache(database: AppDatabase)
             : UserCache = UserCacheImpl(dataBase = database)
-
-    @ActivityScope
-    @Provides
-    fun provideMovieCache(database: AppDatabase)
-            : MovieCache = CachedMoviesDataStore(database = database)
 
     @ActivityScope
     @Provides
